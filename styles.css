@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+}
+header {
+    width: 100%; /* Header takes the full width */
+    text-align: center; /* Center-align header content */
+    background-color: #333; /* Background color for the header */
+    color: white; /* Text color for the header */
+    padding: 10px 0; /* Add some padding to the header */
+}
+.content {
+    display: flex; /* Use flex layout */
+    flex: 4;
+    width: 100%;
+}
+/* Left side (User Div) */
+#UserDiv {
+    width: 50%;
+    flex: 1; /*Take up 25% of the width */
+    flex-direction: column;
+    padding: 20px;
+}
+#saved-locations{
+    display: flex;
+    flex-direction: column;
+    flex: 1 ;
+}
+/* Right side (Data Div) */
+#Data-Div {
+    width: 75%;
+    flex-direction: column;
+    /* flex: 3; Take up 75% of the width */
+    padding: 20px;
+}
+#saved-locations button {
+    background-color: #0074d9;
+    color: white;
+    border: none; 
+    border-radius: 5px;
+    padding: 5px 10px; /* Add padding to the button */
+    margin: 5px 0; 
+    cursor: pointer; 
+}
+
+#saved-locations button:hover {
+    background-color: #0056b3; 
+}
+.Current-Data {
+    background: linear-gradient(to bottom, #0074d9, #6c00f7);
+    padding: 20px;
+    border-radius: 5px; 
+    color: white; 
+    text-align: center;
+}
+.Current-Data {
+  display: none;
+}
+
+/* Add this CSS to style the current forecast when it's displayed */
+.Current-Data.active {
+  display:block;
+  background: linear-gradient(to bottom, #0074d9, #b10dc9);
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+.weather-day {
+    background-color: #f1f1f1; 
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 10px; 
+    background: linear-gradient(to bottom, #0074d9, #b10dc9);
+    width: 20%;
+  }
+  
+  .weather-day:last-child {
+    margin-right: 0;
+  }
+  
+  .Weather-Cards {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: start;
+    /* flex-wrap: wrap;  */
+    /* overflow-x: auto; */
+  }
+  .Forcast{
+    width: 100%;
+  }
