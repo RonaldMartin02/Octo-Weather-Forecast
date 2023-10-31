@@ -4,7 +4,7 @@ This is a Weather Dashboard web application that allows users to search for weat
 ## Deployment
 [Link to the website](https://ronaldmartin02.github.io/Octo-Weather-Forecast/)
 
-![Image of my Website Deployed](./Assets/css/Oct-Weather-Forecast-Deployment.PNG)
+![Image of my Website Deployed](./Assets/img/Oct-Weather-Forecast-Deployment.PNG)
 
 ## Usage
 Searching for a City
