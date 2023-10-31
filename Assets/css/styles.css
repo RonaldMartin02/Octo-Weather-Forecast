@@ -85,8 +85,6 @@ header {
     width: 100%;
     flex-direction: row;
     align-items: start;
-    /* flex-wrap: wrap;  */
-    /* overflow-x: auto; */
   }
   .Forcast{
     width: 100%;

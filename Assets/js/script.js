@@ -72,7 +72,6 @@ function generateWeatherInfo(lat, lon) {
       for (let i = 0; i < data.list.length; i++) {
         const forecastItem = data.list[i];
         const forecastDate = forecastItem.dt_txt.split(" ")[0];
-
         // Check if it's a new day
         if (forecastDate !== currentDay) {
           // Create a new div for the day
@@ -105,13 +104,14 @@ function generateWeatherInfo(lat, lon) {
           currentPic.setAttribute("alt", forecastItem.weather[0].description);
           imgDiv.appendChild(currentPic);
           dayDiv.appendChild(imgDiv);
-
+          console.log(forecastItem)
           // Append the div for the day's forecast to cardsDiv
           cardsDiv.appendChild(dayDiv);
           // Update the currentDay variable
           currentDay = forecastDate;
         }
-      }
+      
+    }
     })
     .catch(function (err) {
       console.error(err);
@@ -121,7 +121,6 @@ function generateWeatherInfo(lat, lon) {
       currentInfoDiv.classList.add('active'); // Add the 'active' class to show the current forecast
     }
 }
-
 function getCityCoordinates() {
   var cityName = cSearch.value;
   var state = stateSelect.value;
@@ -150,9 +149,8 @@ function getCityCoordinates() {
       alert("An error occurred while fetching the coordinates.");
     });
 }
-
 function saveCityState(city, state) {
-  const geoCodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state}&limit=1&appid=${weatherAPIKey}`;
+  const geoCodingApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${state}&limit=1&appid=${weatherAPIKey}`;
   
   fetch(geoCodingApiUrl)
     .then(function (response) {
@@ -173,7 +171,6 @@ function saveCityState(city, state) {
       alert("An error occurred while fetching weather data.");
     });
 }
-
 function displaySavedLocations() {
   const savedLocations = JSON.parse(localStorage.getItem('savedLocations')) || [];
 
@@ -210,7 +207,7 @@ function addSavedLocationButton(city, state) {
     sLocButton.id = 'first-saved-button';
     sLocButton.addEventListener('click', () => {
       // Fetch weather data for the saved location when the button is clicked
-      const geoCodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state}&limit=1&appid=${weatherAPIKey}`;
+      const geoCodingApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${state}&limit=1&appid=${weatherAPIKey}`;
       fetch(geoCodingApiUrl)
         .then(function (response) {
           return response.json();
