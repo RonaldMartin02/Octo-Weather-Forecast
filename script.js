@@ -152,7 +152,7 @@ function getCityCoordinates() {
 }
 
 function saveCityState(city, state) {
-  const geoCodingApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${state}&limit=1&appid=${weatherAPIKey}`;
+  const geoCodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state}&limit=1&appid=${weatherAPIKey}`;
   
   fetch(geoCodingApiUrl)
     .then(function (response) {
@@ -210,7 +210,7 @@ function addSavedLocationButton(city, state) {
     sLocButton.id = 'first-saved-button';
     sLocButton.addEventListener('click', () => {
       // Fetch weather data for the saved location when the button is clicked
-      const geoCodingApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${state}&limit=1&appid=${weatherAPIKey}`;
+      const geoCodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state}&limit=1&appid=${weatherAPIKey}`;
       fetch(geoCodingApiUrl)
         .then(function (response) {
           return response.json();
